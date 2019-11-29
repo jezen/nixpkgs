@@ -1,4 +1,9 @@
-#! @perl@
+#! /bin/sh --
+eval '(exit $?0)' && eval 'PERL_BADLANG=x;PATH="/usr/bin:/bin:/usr/local/bin:$PATH";export PERL_BADLANG;: \
+;exec perl -x -S -- "$0" ${1+"$@"};#'if 0;
+exec 'setenv PERL_BADLANG x;exec perl -x -S -- "$0" $argv:q;#'.q
+#!/bin/perl -w
++($0=~/(.*)/s);do(index($1,"/")<0?"./$1":$1);die$@if$@;__END__+if 0;
 
 use strict;
 use Cwd 'abs_path';
